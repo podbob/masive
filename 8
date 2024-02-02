@@ -1,0 +1,33 @@
+def valid_mountain_array(arr):
+    n = len(arr)
+    
+    if n < 3:
+        return False
+    
+    peak_index = arr.index(max(arr))
+    
+    if peak_index == 0 or peak_index == n - 1:
+        return False
+    
+    for i in range(peak_index):
+        if arr[i] >= arr[i + 1]:
+            return False
+
+    for i in range(peak_index, n - 1):
+        if arr[i] <= arr[i + 1]:
+            return False
+    
+    return True
+
+# Приклади використання:
+input_arr_1 = [2, 1]
+output_1 = valid_mountain_array(input_arr_1)
+print("Output 1:", output_1)
+
+input_arr_2 = [3, 5, 5]
+output_2 = valid_mountain_array(input_arr_2)
+print("Output 2:", output_2)
+
+input_arr_3 = [0, 3, 2, 1]
+output_3 = valid_mountain_array(input_arr_3)
+print("Output 3:", output_3)
