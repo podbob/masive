@@ -1,0 +1,22 @@
+def sorted_squares(nums):
+
+    if not nums:
+        return []
+    
+    current_square = nums[0] ** 2
+    
+    squares_in_rest = sorted_squares(nums[1:])
+    
+    insert_index = 0
+    while insert_index < len(squares_in_rest) and squares_in_rest[insert_index] < current_square:
+        insert_index += 1
+    squares_in_rest.insert(insert_index, current_square)
+    
+    return squares_in_rest
+
+# Приклад використання:
+result_1 = sorted_squares([-4, -1, 0, 3, 10])
+result_2 = sorted_squares([-7, -3, 2, 3, 11])
+
+print("Result 1:", result_1)
+print("Result 2:", result_2)
