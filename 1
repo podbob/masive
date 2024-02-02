@@ -1,0 +1,17 @@
+def max_ones_count(nums):
+   
+    if not nums:
+        return 0
+  
+    count_from_start = nums[0] + max_ones_count(nums[1:])
+   
+    count_from_second = max_ones_count(nums[1:])
+    
+    return max(count_from_start, count_from_second)
+
+# Приклад використання:
+result_1 = max_ones_count([1, 1, 0, 1, 1, 1])
+result_2 = max_ones_count([1, 0, 1, 1, 0, 1])
+
+print("Result 1:", result_1)
+print("Result 2:", result_2)
