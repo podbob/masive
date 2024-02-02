@@ -1,0 +1,28 @@
+def merge(nums1, m, nums2, n):
+ 
+    nums1[m:] = nums2
+    
+
+    nums1.sort(reverse=False)
+
+# Приклади використання:
+input_nums1_1 = [1, 2, 3, 0, 0, 0]
+input_m_1 = 3
+input_nums2_1 = [2, 5, 6]
+input_n_1 = 3
+merge(input_nums1_1, input_m_1, input_nums2_1, input_n_1)
+print("Output 1:", input_nums1_1)
+
+input_nums1_2 = [1]
+input_m_2 = 1
+input_nums2_2 = []
+input_n_2 = 0
+merge(input_nums1_2, input_m_2, input_nums2_2, input_n_2)
+print("Output 2:", input_nums1_2)
+
+input_nums1_3 = [0]
+input_m_3 = 0
+input_nums2_3 = [1]
+input_n_3 = 1
+merge(input_nums1_3, input_m_3, input_nums2_3, input_n_3)
+print("Output 3:", input_nums1_3)
