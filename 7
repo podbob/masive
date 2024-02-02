@@ -1,0 +1,15 @@
+def check_if_exists(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if i != j and arr[i] == 2 * arr[j]:
+                return True
+    return False
+
+# Приклади використання:
+input_arr_1 = [10, 2, 5, 3]
+output_1 = check_if_exists(input_arr_1)
+print("Output 1:", output_1)
+
+input_arr_2 = [3, 1, 7, 11]
+output_2 = check_if_exists(input_arr_2)
+print("Output 2:", output_2)
