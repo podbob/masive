@@ -1,0 +1,23 @@
+def replace_elements(arr):
+    n = len(arr)
+
+    if n == 1:
+        return [-1]
+
+    max_right = -1
+
+    for i in range(n - 1, -1, -1):
+        current = arr[i]
+        arr[i] = max_right
+        max_right = max(max_right, current)
+
+    return arr
+
+# Приклади використання:
+input_arr_1 = [17, 18, 5, 4, 6, 1]
+output_1 = replace_elements(input_arr_1)
+print("Output 1:", output_1)
+
+input_arr_2 = [400]
+output_2 = replace_elements(input_arr_2)
+print("Output 2:", output_2)
