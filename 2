@@ -1,0 +1,21 @@
+def count_numbers_with_even_digits(nums):
+
+    if not nums:
+        return 0
+    
+    current_number = nums[0]
+    digit_count = 0
+    while current_number > 0:
+        current_number //= 10
+        digit_count += 1
+    
+    count_in_rest = count_numbers_with_even_digits(nums[1:])
+    
+    return count_in_rest + (digit_count % 2 == 0)
+
+# Приклад використання:
+result_1 = count_numbers_with_even_digits([12, 345, 2, 6, 7896])
+result_2 = count_numbers_with_even_digits([555, 901, 482, 1771])
+
+print("Result 1:", result_1)
+print("Result 2:", result_2)
